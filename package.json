@@ -6,10 +6,21 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "chart.js": "^3.7.1",
+    "chartjs-adapter-luxon": "^1.1.0",
+    "chartjs-plugin-datalabels": "^2.0.0",
+    "chartjs-plugin-streaming": "^2.0.0",
+    "create-react-class": "^15.7.0",
+    "luxon": "^2.3.1",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
+    "react-chartjs-2": "^4.0.1",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
