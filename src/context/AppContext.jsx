@@ -1,5 +1,4 @@
 import React, { useReducer, createContext, useContext } from 'react';
-
 import { reducer } from './reducers/reducers';
 
 //*Creating the Context for data access
@@ -395,7 +394,7 @@ var initialState = [
 
 const AppContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  //* Avoiding unecessary re-renders
+
   const value = {
     state,
     dispatch,

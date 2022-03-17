@@ -3,7 +3,6 @@ import { Line, Bar } from 'react-chartjs-2';
 import 'chartjs-adapter-luxon';
 import StreamingPlugin from 'chartjs-plugin-streaming';
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
-
 import Chart from 'chart.js/auto';
 import { useDataStreamContextContext } from '../context/AppContext';
 
@@ -11,7 +10,7 @@ Chart.register(StreamingPlugin, DataLabelsPlugin);
 
 const StreamData = () => {
   const { state } = useDataStreamContextContext();
-  console.log(state);
+
   const onRefresh = (stream) => {
     stream.datasets.forEach((dataset) => {
       dataset.data.push({
@@ -25,14 +24,7 @@ const StreamData = () => {
   };
 
   return (
-    <div
-      style={
-        {
-          // width: '45%',
-          // height: '35%',
-        }
-      }
-    >
+    <div style={{ display: 'flex' }}>
       {state.map((datasets) => {
         let data = datasets;
         let options = {
@@ -81,14 +73,14 @@ const StreamData = () => {
         };
         if (datasets.style === 'line') {
           return (
-            <div key={datasets.title}>
+            <div className="chart__box" key={datasets.title}>
               <h3>Click on color boxes to choose a stream</h3>
               <Line data={data} options={options} />
             </div>
           );
         } else {
           return (
-            <div key={datasets.title}>
+            <div className="chart__box" key={datasets.title}>
               <h3>Click on color boxes to choose a stream</h3>
               <Bar data={data} options={options} />
             </div>
