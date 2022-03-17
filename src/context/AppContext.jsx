@@ -1,5 +1,4 @@
-import React, { useReducer, createContext, useContext } from 'react';
-import { reducer } from './reducers/reducers';
+import React, { createContext, useContext, useState } from 'react';
 
 //*Creating the Context for data access
 export const DataStreamContext = createContext();
@@ -393,11 +392,10 @@ var initialState = [
 ];
 
 const AppContext = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state] = useState(initialState);
 
   const value = {
     state,
-    dispatch,
   };
 
   return (
